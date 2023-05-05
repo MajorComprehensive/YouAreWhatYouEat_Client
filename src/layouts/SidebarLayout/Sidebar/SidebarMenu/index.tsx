@@ -210,7 +210,7 @@ function SidebarMenu(props) {
           component="div"
           subheader={
             <ListSubheader component="div" disableSticky>
-              精品锅底
+              人气推荐
             </ListSubheader>
           }
           style={{paddingLeft:'0',paddingRight:'0'}}
@@ -224,36 +224,16 @@ function SidebarMenu(props) {
                     //   currentRoute === '/orderdishes' ? 'active' : ''
                     // }
                     style={{
-                      backgroundColor: props.nowDishTag === '单锅' ? '#98313e' : '',
+                      backgroundColor: props.nowDishTag === '人气菜品' ? '#98313e' : '',
                       borderRadius:'0',
                     }}
                     fullWidth
                     disableRipple
                     component="a"
-                    onClick={()=>props.handleDishTag("单锅")}
+                    onClick={()=>props.handleDishTag("人气菜品")}
                     startIcon={<BrightnessLowTwoToneIcon />}
                   >
-                    单锅
-                  </Button>
-                {/* </NextLink> */}
-              </ListItem>
-              <ListItem component="div">
-                {/* <NextLink href="/orderdishes/" passHref> */}
-                <Button
-                    // className={
-                    //   currentRoute === '/orderdishes' ? 'active' : ''
-                    // }
-                    style={{
-                      backgroundColor: props.nowDishTag === '拼锅' ? '#98313e' : '',
-                      borderRadius:'0',
-                    }}
-                    fullWidth
-                    disableRipple
-                    component="a"
-                    onClick={()=>props.handleDishTag("拼锅")}
-                    startIcon={<BrightnessLowTwoToneIcon />}
-                  >
-                    拼锅
+                    人气菜品
                   </Button>
                 {/* </NextLink> */}
               </ListItem>
