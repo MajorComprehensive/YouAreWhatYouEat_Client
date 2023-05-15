@@ -57,26 +57,6 @@ interface DishProps{
 const InitialDish=(dishes):Array<DishProps>=>{
   console.log("+++++++++++++");
   console.log(dishes);
-  // let dishesAll = [];
-  // for(let i = 0;i < dishes.dish_havethetag.length; i++) {
-  //   let dish = [];
-  //   dish["dishid"] = dishes.dish_havethetag[i].dish_id;
-  //   dish["dishname"] = dishes.dish_havethetag[i].dish_name;
-  //   dish["picture"] = dishes.dish_havethetag[i].dish_picture;
-  //   dish["price"] = dishes.dish_havethetag[i].dish_price;
-  //   dish["rate"] = dishes.dish_havethetag[i].dish_rate;
-  //   dish["description"] = dishes.dish_havethetag[i].dish_description;
-
-  //   dish["ordernum"] = 1;
-  //   dish["dishsalt"] = "正常盐";
-  //   dish["dishspicy"] = "不辣";
-  //   dish["dishsweet"] = "少糖";
-  //   dish["searched"] = true;
-
-  //   dishesAll.push(dish);
-  // }
-  // console.log(dishesAll);
-  // return dishesAll;
   return [
       {
           dishid:1,
@@ -407,27 +387,6 @@ class MainPanel extends React.Component<any,any>{
       this.setState({
         dishes: dishes
       })
-      // console.log(this.state.dishes);
-      // let dishes1 = this.state.dishes;
-
-      // dishes1 = dishes1.filter((dish) => {
-      //   let matches = true;
-      //   if(value && !(dish.dishname.includes(value)))
-      //   {
-      //     matches=false;
-      //   }
-      //   return matches;
-      // });
-      // console.log(dishes1);
-      // console.log(this.state.dishesShow);
-      // console.log("search change-------------------");
-      // this.setState({
-      //   dishesShow: dishes
-      // })
-      // this.setState(function(){
-      //     console.log("搜索的setstate触发了");
-      //     return{dishesShow: dishes1};
-      // });
     };
 
     render(){
@@ -484,120 +443,10 @@ class MainPanel extends React.Component<any,any>{
         <ShoppingCartFab dishes={this.state.dishes}
                          hdPlus={this.handleClickPlus}
                          hdMinus={this.handleClickMinus}/>
-        {/* <SearchFab handleSearchChange={this.handleSearchChange}/> */}
-        {/* <FormControl 
-          variant="outlined"
-          style={{
-            width:"12%",
-            position: 'fixed',
-            bottom: 30,
-            left: -10,
-            zIndex:'7',
-            // color:"red"
-            backgroundColor:"#eff1f5",
-            padding:"10px 2px",
-            borderRadius:"5px",
-          }}
-          sx={{ m: 1, minWidth: 100 }}
-        >
-          
-          <TextField 
-          id="outlined-basic" 
-          label="搜索菜品名称" 
-          variant="outlined"
-          onChange={this.handleSearchChange} 
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon/>
-              </InputAdornment>
-            ),
-          }}
-          />
-        </FormControl> */}
         </>
       )
 
-//         return(
-// <Box sx={{minWidth:100}}>
-//  <Grid container spacing={1}> 
-//     {
-//       this.state.dishes.map((dish,index)=>
-//       <Grid item xs={4} key={index}>
-//         <Card sx={{ minWidth:320 }} >
-//       <CardMedia
-//         component="img"
-//         height="140" 
 
-//         image={dish.picture}
-//         alt={dish.dishname}
-//       />
-//       <CardContent>
-        
-//         <Grid container spacing={1}>
-//         <Grid item xs={9}>
-//         <Typography gutterBottom variant="h5" component="div">
-//           {dish.dishname}
-//         </Typography>
-//         </Grid>
-
-//         <Grid item xs={3}>
-//           <Stack direction="row">
-//        <Box >
-//        <SvgIcon fontSize="small">
-//          <path fill="#FFD700" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" />
-//        </SvgIcon></Box>
-//         <Typography variant="body2" color="#9C9C9C" >
-//          &nbsp;&nbsp;{dish.rate.toFixed(1)}
-//         </Typography>
-//         </Stack>
-//         </Grid>
-//         </Grid>
-
-//         <Typography variant="body2" color="text.secondary">
-//         {dish.price} 元/份
-//         </Typography>
-
-//       </CardContent>
-//       <Grid container spacing={2}>
-//         <Grid item xs={8}>
-//           <CardActions>
-
-//             <Stack direction="row" >
-//             <IconButton onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
-//             this.handleClickMinus(index);}}>
-//             <Minus ordernum={dish.ordernum}/>
-//             </IconButton> 
-
-//             <Typography variant="body1" color="#123456"  lineHeight={3}>
-//             {dish.ordernum>0?dish.ordernum:"  "}
-//             </Typography>
-//             <IconButton onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
-//             this.handleClickPlus(index);
-//             }}>
-//             <Plus ordernum={dish.ordernum}/>
-//             </IconButton>
-//             </Stack>
-
-//           </CardActions>
-//         </Grid>
-//         <Grid item xs={4}>
-//           <DishInfoDialog 
-//             dish={dish}
-//           />
-//         </Grid>
-//       </Grid>
-      
-//      </Card> </Grid>
-     
-  
-//      )
-//     }
-//     </Grid> 
-//     </Box>
-
-
-//         );
     }
 }
 

@@ -109,218 +109,6 @@ const InitialDish=(dishes):Array<DishProps>=>{
   }
   console.log(dishesAll);
   return dishesAll;
-  // return [
-  //     {
-  //         dishid:1,
-  //         dishname:"清炒土豆丝",
-  //         price:9,
-  //         picture:"/static/images/status/potato.png",
-  //         ordernum:1,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["素菜","精品锅底"],
-  //         selected:true,
-  //     },
-  //     {
-  //         dishid:2,
-  //         dishname:"番茄炒蛋",
-  //         price:5.5,
-  //         picture:"/static/images/status/tomato.png",
-  //         ordernum:1,
-  //         rate:4.6,
-  //         description:"有点甜",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true,
-  //     },
-  //     {
-  //         dishid:3,
-  //         dishname:"炒洋葱",
-  //         price:10,
-  //         picture:"/static/images/status/onion.png",
-  //         ordernum:0,
-  //         rate:4.3,
-  //         description:"让人眼前一亮",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["精品锅底"],
-  //         selected:true,
-  //     },
-  //     {
-  //         dishid:4,
-  //         dishname:"北京烤鸭",
-  //         price:106,
-  //         picture:"/static/images/status/duck.jpg",
-  //         ordernum:1,
-  //         rate:4.9,
-  //         description:"正宗烤鸭，现烤现卖",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true,
-  //     },
-  //     {
-  //         dishid:5,
-  //         dishname:"干锅花菜",
-  //         price:51,
-  //         picture:"/static/images/status/broc.jpg",
-  //         ordernum:1,
-  //         rate:4.0,
-  //         description:"烈火中盛开的...花菜",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:6,
-  //         dishname:"土豆牛肉",
-  //         price:40,
-  //         picture:"/static/images/status/beef.jpg",
-  //         ordernum:1,
-  //         rate:3.9,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:7,
-  //         dishname:"新疆羊肉串",
-  //         price:30,
-  //         picture:"/static/images/status/muttonchuan.jpg",
-  //         ordernum:1,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:8,
-  //         dishname:"鱼豆腐",
-  //         price:20,
-  //         picture:"/static/images/status/tofu.png",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:9,
-  //         dishname:"虾仁粉丝煲",
-  //         price:60,
-  //         picture:"/static/images/status/fans.jpg",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:10,
-  //         dishname:"歪比巴卜",
-  //         price:20,
-  //         picture:"/static/images/status/tomato.png",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:11,
-  //         dishname:"歪比巴卜",
-  //         price:97,
-  //         picture:"/static/images/status/potato.png",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:12,
-  //         dishname:"歪比巴卜",
-  //         price:13238936,
-  //         picture:"/static/images/status/onion.png",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["精品锅底"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:13,
-  //         dishname:"歪比巴卜",
-  //         price:13238936,
-  //         picture:"/static/images/status/broc.jpg",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     },
-  //     {
-  //         dishid:14,
-  //         dishname:"歪比巴卜",
-  //         price:13238936,
-  //         picture:"/static/images/status/tofu.png",
-  //         ordernum:0,
-  //         rate:4.7,
-  //         description:"简单的做法，极致的美味",
-  //         dishsalt:"正常盐",
-  //         dishspicy:"不辣",
-  //         dishsweet:"少糖",
-  //         searched:true,
-  //         dishtag:["全新套餐"],
-  //         selected:true
-  //     }
-  // ]
 }
 
 export const Plus=(props)=>{
@@ -391,20 +179,12 @@ class MainPanel extends React.Component<any,any>{
           break;
         }
       }
-      // console.log(index);
-      // console.log(this.state.dishesShow);
-      // console.log("click plus-----------");
       let dishes = this.state.dishes;
       dishes[index].ordernum++;
       // console.log(this.state.dishes);
       this.setState({
         dishes:dishes
       });
-      // console.log(nowDishTag);
-      // this.setState(function(state){
-      //     this.state.dishes[index].ordernum++;
-      //     return{dishes:state.dishes};
-      // });
     }
 
     handleClickMinus(dishid:number){
@@ -422,11 +202,6 @@ class MainPanel extends React.Component<any,any>{
       this.setState({
         dishes:dishes
       });
-      // this.setState(function(state){
-      //     if(this.state.dishes[index].ordernum>0)
-      //         this.state.dishes[index].ordernum--;
-      //     return{dishes:state.dishes};
-      // });
     }
 
     handleDishSaltChange = (event,dishid) => {
@@ -491,9 +266,12 @@ class MainPanel extends React.Component<any,any>{
       } else if(event.target.value === "评分排序") {
         sortTag = "评分排序";
         dishesAll.sort(function(a, b){return b.rate - a.rate});
-      } else if(event.target.value === "菜名排序") {
-        sortTag = "菜名排序";
-        dishesAll.sort(function(a, b){return a.dishname.localeCompare(b.dishname);})
+      } else if(event.target.value === "价格降序") {
+        sortTag = "价格降序";
+        dishesAll.sort(function(a, b){return b.price - a.price;})
+      } else if(event.target.value === "价格升序") {
+        sortTag = "价格升序";
+        dishesAll.sort(function(a, b){return a.price - b.price;})
       }
       this.setState({
         dishes:dishesAll,
@@ -526,27 +304,6 @@ class MainPanel extends React.Component<any,any>{
       this.setState({
         dishes: dishes
       })
-      // console.log(this.state.dishes);
-      // let dishes1 = this.state.dishes;
-
-      // dishes1 = dishes1.filter((dish) => {
-      //   let matches = true;
-      //   if(value && !(dish.dishname.includes(value)))
-      //   {
-      //     matches=false;
-      //   }
-      //   return matches;
-      // });
-      // console.log(dishes1);
-      // console.log(this.state.dishesShow);
-      // console.log("search change-------------------");
-      // this.setState({
-      //   dishesShow: dishes
-      // })
-      // this.setState(function(){
-      //     console.log("搜索的setstate触发了");
-      //     return{dishesShow: dishes1};
-      // });
     };
 
     handleTableChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -632,7 +389,8 @@ class MainPanel extends React.Component<any,any>{
                     >
                         <MenuItem value="默认排序">默认排序</MenuItem>
                         <MenuItem value="评分排序">评分排序</MenuItem>
-                        <MenuItem value="菜名排序">菜名排序</MenuItem>
+                        <MenuItem value="价格降序">价格降序</MenuItem>
+                        <MenuItem value="价格升序">价格升序</MenuItem>
                     </Select>
                 </FormControl>
                 
@@ -686,37 +444,6 @@ class MainPanel extends React.Component<any,any>{
                          hdClear={this.handleClear}
                          table_id={this.state.tableId}
                         />
-        {/* <SearchFab handleSearchChange={this.handleSearchChange}/> */}
-        {/* <FormControl 
-          variant="outlined"
-          style={{
-            width:"12%",
-            position: 'fixed',
-            bottom: 30,
-            left: -10,
-            zIndex:'7',
-            // color:"red"
-            backgroundColor:"#eff1f5",
-            padding:"10px 2px",
-            borderRadius:"5px",
-          }}
-          sx={{ m: 1, minWidth: 100 }}
-        >
-          
-          <TextField 
-          id="outlined-basic" 
-          label="搜索菜品名称" 
-          variant="outlined"
-          onChange={this.handleSearchChange} 
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon/>
-              </InputAdornment>
-            ),
-          }}
-          />
-        </FormControl> */}
         </>
       )
     }
