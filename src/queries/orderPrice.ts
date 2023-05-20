@@ -16,7 +16,7 @@ class OrderPriceApi {
     }
 
     public async getOrderStatus(order_id:string){
-        return (await (GetApi("OrderDish/GetOrderStatus",{
+        return (await (GetApi("Pay/GetOrderStatus",{
             order_id:order_id,
         }))).data as OrderStatus;
     }
