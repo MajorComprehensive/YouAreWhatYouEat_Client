@@ -15,6 +15,7 @@ import SignUpVip from './register';
 import { queryVipApi } from '@/queries/query_vip';
 import Snackbar from '@mui/material/Snackbar';
 import { Alert } from '@mui/material';
+import FullviewDialog from '@/contents/FullviewDialog';
 
 
 const theme = createTheme({
@@ -44,6 +45,10 @@ function Copyright(props: any) {
 
 
 export default function SignInSide() {
+
+  const [dialog,setDialog]=React.useState(false);
+
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -175,6 +180,13 @@ export default function SignInSide() {
                         暂不登录？直接点餐
                     </Button>
                 </Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={10}>
+                <FullviewDialog/>
+                </Grid>
+
+
                 <Grid item xs={1}></Grid>
             </Grid>
             
