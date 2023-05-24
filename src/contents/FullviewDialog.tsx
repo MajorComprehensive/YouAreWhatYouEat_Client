@@ -84,18 +84,12 @@ export default function DetailEmployeePopup() {
             </Button>
           </Toolbar>
         </AppBar>
-        <Container style={{
-            height:"100vh",
-            width:"100vw",
-            border:"none"
-        }}>
         <iframe src="/static/CanteenSim/index.html" allowFullScreen={true} scrolling='no'
             style={{
             height:"100vh",
             width:"100vw",
             border:"none"
         }}/>
-        </Container>
       </Dialog>}
     </div>
   );
