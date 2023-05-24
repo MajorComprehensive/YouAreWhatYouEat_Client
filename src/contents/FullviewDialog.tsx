@@ -84,18 +84,17 @@ export default function DetailEmployeePopup() {
             </Button>
           </Toolbar>
         </AppBar>
-        <Container sx={{ mt: 3 }} maxWidth="lg">
-          <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="stretch"
-            spacing={3}
-          >
-            <Grid item xs={12} md={8}>
-				<iframe src="/static/CanteenSim/index.html" allowFullScreen={true} width={"100%"} height={"600px"} scrolling='no'/>
-            </Grid>
-          </Grid>
+        <Container style={{
+            height:"100vh",
+            width:"100vw",
+            border:"none"
+        }}>
+        <iframe src="/static/CanteenSim/index.html" allowFullScreen={true} scrolling='no'
+            style={{
+            height:"100vh",
+            width:"100vw",
+            border:"none"
+        }}/>
         </Container>
       </Dialog>}
     </div>
