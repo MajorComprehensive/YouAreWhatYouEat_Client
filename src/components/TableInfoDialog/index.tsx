@@ -58,7 +58,7 @@ export default function TableInfoDialog(props) {
   return (
     <React.Fragment>
        <ThemeProvider theme={theme}>
-        <Button sx={{ mt: 2}} style={{textAlign: "center",fontSize:"30px",color:"rgba(0,0,0,0.6)"}} onClick={handleClickOpen}>当前桌号：{props.tableId}</Button>
+        <Button sx={{ mt: 2}} style={{textAlign: "start",fontSize:"30px",color:"rgba(0,0,0,0.6)",width:"400px"}} onClick={handleClickOpen}>当前桌号：{props.tableId} {props.waitress}</Button>
         <Dialog
             fullWidth={fullWidth}
             maxWidth={maxWidth}

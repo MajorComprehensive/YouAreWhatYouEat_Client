@@ -39,6 +39,8 @@ import PromotionAd from '../../src/components/PromotionAd/index';
 import { dishesApi } from '@/queries/dishes';
 import { DishHavethetag, DishesInfo, DishAll, DishesAll } from '@/models/dishes_info';
 
+import {waitressInfoApi} from '@/queries/waitress';
+
 import { useRefMounted } from 'src/hooks/useRefMounted';
 import { useState, useCallback, useEffect } from 'react';
 import Sidebar from '@/layouts/SidebarLayout/Sidebar/index';
@@ -140,7 +142,8 @@ class MainPanel extends React.Component<any,any>{
                 nowDishTag:"全部菜品",
                 promoId:-1,
                 sortTag:"默认排序",
-                tableId:1
+                tableId:1,
+                waitress:""
               };
                 
    this.handleClickPlus=this.handleClickPlus.bind(this);
@@ -312,10 +315,23 @@ class MainPanel extends React.Component<any,any>{
       if (e.target.value !== null) {
         value = e.target.value;
       }
-      // console.log("桌子号",value);
-      this.setState({
-        tableId:value
-      })
+
+      waitressInfoApi.getWaitressInfo(value).then((res)=>{
+
+        let waitressStr="";
+
+        if(res!=null){
+
+          waitressStr="  服务员:"+res.waiter_name;
+
+        }
+
+        this.setState({
+          tableId:value,
+          waitress:waitressStr
+        });
+
+      });
     }
 
     handleDishTag = (dishTag) => {
@@ -369,9 +385,9 @@ class MainPanel extends React.Component<any,any>{
                 />
               </FormControl>
             </Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={2}>
-                <TableInfoDialog style={{}}handleTableChange={this.handleTableChange} tableId={this.state.tableId}/>
+            <Grid item xs={2}></Grid>
+            <Grid item xs={3}>
+                <TableInfoDialog style={{}} handleTableChange={this.handleTableChange} tableId={this.state.tableId} waitress={this.state.waitress}/>
             </Grid>
             <Grid item xs={3}></Grid>
             <Grid item xs={2}>
