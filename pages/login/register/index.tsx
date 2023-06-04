@@ -173,7 +173,7 @@ export default function SignUpVip() {
   };
 
   const handleSubmitEdit = async () => {
-    console.log('edit confirm');
+    // console.log('edit confirm');
     //  检查数据
     
 
@@ -183,11 +183,11 @@ export default function SignUpVip() {
       birthday: birthday,
     };
 
-    console.log(submit);
+    // console.log(submit);
     
     try {
       let res = await queryVipApi.createVip(submit);
-      console.log(res);
+      // console.log(res);
       setOpenSuccessDialog(true);
       //window.location.reload();
     } catch (err) {

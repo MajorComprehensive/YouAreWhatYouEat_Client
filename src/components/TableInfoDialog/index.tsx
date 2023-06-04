@@ -52,7 +52,7 @@ export default function TableInfoDialog(props) {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const data = new FormData(event.currentTarget);
-    console.log(data);
+    // console.log(data);
   }
 
   return (

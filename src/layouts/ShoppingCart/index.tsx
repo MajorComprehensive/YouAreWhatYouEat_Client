@@ -109,7 +109,7 @@ function a11yProps(index: number) {
 }
 
 function TypoPrice(props){
-  console.log(props.discount);
+  // console.log(props.discount);
   if(!(props.discount<1))
    return(
            <Typography variant="body1" color="red"  >
@@ -142,13 +142,13 @@ function NewList (props){
   const [openSuccess, setOpenSuccess] = React.useState<boolean>(false);
 
 const handleOpenSuccess = () => {
-  console.log("打开success");
+  // console.log("打开success");
   setOpenSuccess(true);
 };
 
 const handleCloseSuccess = () => {
   // props.setLoad(true);
-  console.log("关闭success");
+  // console.log("关闭success");
   setOpenSuccess(false);
 };
 
@@ -156,7 +156,7 @@ const handleCloseSuccess = () => {
     const isMountedRef = useRefMounted();
 
     
-    console.log(props.dishes.length);
+    // console.log(props.dishes.length);
     let empt=true;
 
     const [price,setPrice]=React.useState<number>(0.00);
@@ -170,7 +170,7 @@ const handleCloseSuccess = () => {
 
 
     let dishes=props.dishes;
-    console.log(dishes);
+    // console.log(dishes);
    
     let priceInfo:PromoPrice;
 
@@ -180,13 +180,13 @@ const handleCloseSuccess = () => {
 
      try{
       for(let i=0;i<dishes.length;i++){
-      // console.log("ohhhhhhhhhhhhhhhhhhhhh");
+      // // console.log("ohhhhhhhhhhhhhhhhhhhhh");
       
          if(dishes[i].ordernum>0){
           
             
                 priceInfo=await promoApi.getPromoPrice(props.promoId,dishes[i].dishid) ;
-                console.log(priceInfo);
+                // console.log(priceInfo);
                  if(priceInfo.discount<1){
                    dishes[i].dishdiscount[0]=priceInfo.discount;
                  }
@@ -196,7 +196,7 @@ const handleCloseSuccess = () => {
 
         }
       totPrice+=dishes[i].price*dishes[i].dishdiscount[0]*dishes[i].ordernum;
-      console.log(totPrice);
+      // console.log(totPrice);
       if(price!=totPrice) setPrice(totPrice);
   }
       
@@ -324,17 +324,17 @@ function ShoppingCartFab(props){
   
 
 
-  console.log(props.promoId);//-1
-  console.log("获取用户名为："+user);
+  // console.log(props.promoId);//-1
+  // console.log("获取用户名为："+user);
 
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
   
   const [orderIds,setOrders]=useState<string[]>([]);
-  console.log(orderIds);
+  // console.log(orderIds);
 
   const [add,setAdd]=useState<boolean>(false);
-  console.log("加菜而不是创建订单："+add);
+  // console.log("加菜而不是创建订单："+add);
 
   const addOrder=(newOrderId:string)=>{
     let newOne:string[]=[newOrderId];

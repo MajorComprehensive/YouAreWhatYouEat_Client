@@ -15,8 +15,8 @@ import CleanDialog from '../Clean';
 
 export default function PayDialog(props){
 
-    console.log("最终付款价格："+props.final_price);
-    console.log("结账订单IDs："+props.orderIds);
+    // console.log("最终付款价格："+props.final_price);
+    // console.log("结账订单IDs："+props.orderIds);
 
     const [itvl,setItvl]=React.useState(10000000);
 
@@ -25,8 +25,8 @@ export default function PayDialog(props){
     if(open==true&&itvl>3000){
       setItvl(3000);
     }
-    console.log(open);
-    console.log(itvl);
+    // console.log(open);
+    // console.log(itvl);
 
     // else itvl=3000;
     const isMountedRef = useRefMounted();
@@ -35,8 +35,8 @@ export default function PayDialog(props){
        
         setOpen(true);
         setItvl(3000);
-        console.log(itvl);
-        console.log(open);
+        // console.log(itvl);
+        // console.log(open);
       };
     
       const handleClose = () => {
@@ -50,7 +50,7 @@ export default function PayDialog(props){
         // const info:PayInfo={final_price:props.final_price,order_ids:props.orderIds};
  
          let ws=await payApi.getQRstring( props.orderIds[0], props.final_price);
-         console.log("得到的二维码url:"+ws.qrcode);
+         // console.log("得到的二维码url:"+ws.qrcode);
          setWebsite(ws);//刷新二维码
             
         }catch(err){
@@ -64,19 +64,19 @@ export default function PayDialog(props){
       },[getAllData]);
    
 
-    //   console.log("table_id:"+props.table_id);
+    //   // console.log("table_id:"+props.table_id);
     // let ok:boolean=false;//ok=true代表所有订单支付完成
 
     const updateState = React.useCallback(async () => {
       try{
-        console.log("一次轮询"+website.qrcode);
-        // console.log(website);
+        // console.log("一次轮询"+website.qrcode);
+        // // console.log(website);
       const status0=await orderPriceApi.getOrderStatus(props.orderIds[0]);
-      console.log(status0.order_status);
+      // console.log(status0.order_status);
       if(status0.order_status==="已支付"){
-        console.log("支付完成！！");
+        // console.log("支付完成！！");
         if(!openClean) setOpenClean(true);//跳转到清理桌面
-          console.log("打开清理组件"+openClean);
+          // console.log("打开清理组件"+openClean);
       }
 
       }catch(err){
@@ -86,7 +86,7 @@ export default function PayDialog(props){
     }, []);
 
     React.useEffect(() => {
-      // console.log("vewce!!!!"+itvl);
+      // // console.log("vewce!!!!"+itvl);
       setInterval(updateState,3000);//设置轮询时间间隔
     }, [updateState]);
 

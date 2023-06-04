@@ -41,8 +41,8 @@ const theme = createTheme({
 export default function PromoInfo(props){
     // const str="/static/images/status/promo_"+props.id+".png";
     let dishes=props.dishes;
-    console.log("看看活动菜品图片");
-    console.log(props.dishes);
+    // console.log("看看活动菜品图片");
+    // console.log(props.dishes);
     for (let i=0;i<props.dish_all.length;i++){
       for(let j=0;j<props.dishes.length;j++){
           if(props.dish_all[i].dishid===props.dishes[j].dish.dish_id){

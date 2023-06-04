@@ -15,9 +15,9 @@ import { addDishApi } from '@/queries/addDish';
 export default function CheckDialog(props) {
  const [openAlert,setOpenAlert]=React.useState(false);
  
- console.log("购物车获取用户名："+props.username);
+ // console.log("购物车获取用户名："+props.username);
  const handleOpenAlert = () => {
-    console.log("打开alert");
+    // console.log("打开alert");
     setOpenAlert(true);
   };
   
@@ -28,8 +28,8 @@ export default function CheckDialog(props) {
     setOpenAlert(false);
   };
 
-  console.log("确认下单弹窗");
-  console.log(props.open);
+  // console.log("确认下单弹窗");
+  // console.log(props.open);
 
   let price=props.totPrice.toFixed(2);
   return (
@@ -94,8 +94,8 @@ export default function CheckDialog(props) {
     if(props.username!=undefined) upload.username=props.username;
     
    const conduct=async()=>{
-    console.log("提交订单的内容");
-     console.log(upload);
+    // console.log("提交订单的内容");
+     // console.log(upload);
       return orderApi.postOrderList(upload);
    }
      
@@ -126,13 +126,13 @@ export default function CheckDialog(props) {
       order_id:"0"
      } as AddDish;
    
-     console.log("已有订单："+props.orderIds);
+     // console.log("已有订单："+props.orderIds);
      upload.order_id=props.orderIds[0];
      upload.table_id=props.table_id;
 
     const conduct=async()=>{
-     console.log("增加订单内容");
-      console.log(upload);
+     // console.log("增加订单内容");
+      // console.log(upload);
        return addDishApi.postAddDish(upload);
     }
       

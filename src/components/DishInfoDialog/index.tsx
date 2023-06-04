@@ -45,7 +45,7 @@ export default function DishInfoDialog(props) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log(props);
+    // console.log(props);
   };
 
   const handleClose = () => {

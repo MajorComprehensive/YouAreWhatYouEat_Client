@@ -7,6 +7,7 @@ import {
 } from '@/models/dishes_info'
 
 import {GetApi,PostApi} from "@/utils/requests"
+import axios from 'axios';
 
 
 class DishesApi {
@@ -19,9 +20,16 @@ class DishesApi {
     }
     public async getAllDishes(){
         return (await (GetApi("OrderDish/GetAllDishes",{
-        }))).data as DishAll[];
+        }))).data.dish_all as DishAll[];
     }
-
+    public async getRecommendationDishes(ctx){
+        // console.log("CTX",ctx);
+        let res=await axios.get(`/recommendation/${ctx.query.user}`,{
+            baseURL:"http://localhost:8001",
+            params:"",
+        });
+        return res.data['recommendation'] as DishAll[];
+    }
 }
 
 export const dishesApi = new DishesApi();

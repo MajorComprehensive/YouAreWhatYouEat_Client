@@ -66,7 +66,7 @@ function Status(props){
 // 需要根据status调整color
 
   let color='info';//待处理 
-  console.log(props.status);
+  // console.log(props.status);
   if(props.status==="制作中") color="primary";
   else if(props.status==="已完成") color="success";
 
@@ -95,7 +95,7 @@ const [price,setPrice]=useState<OrderTotPrice>(initPrice);
 
 //如果没有任何订单，返回“暂无”
 if(orderId.length===0){
-  console.log(orderId);
+  // console.log(orderId);
   return( 
     <Box sx={{minHeight:700}}>
   <Typography textAlign={"center"} lineHeight={4} color="#9C9C9C">
@@ -118,34 +118,34 @@ const getAllData=useCallback(async()=>{
 //测试订单支付状态api
     //  let orderStatus=await orderPriceApi.getOrderStatus(orderId[0]);
     
-    // console.log(orderStatus);
+    // // console.log(orderStatus);
 
     if(orderId.length>1){
-      console.log("订单id长度不会大于1了, 肯定是搞错了");
+      // console.log("订单id长度不会大于1了, 肯定是搞错了");
     }
 
-    console.log("debug");
-    console.log(orderPrice);
-    console.log(orderId);
+    // console.log("debug");
+    // console.log(orderPrice);
+    // console.log(orderId);
 
      
      if(isMountedRef()){
       //重新渲染页面
       // if(dishes!=orderDishes)setDishes(orderDishes);
-      console.log(props.dishes);
+      // console.log(props.dishes);
       for(let i=0;i<props.dishes.length;i++){
         for(let j=0;j<orderDishes.dish_info.length;j++){
           if(props.dishes[i].dishid===orderDishes.dish_info[j].dish_id){
-            console.log("id相等");
+            // console.log("id相等");
             orderDishes.dish_info[j].remark=props.dishes[i].dishsalt+", "+props.dishes[i].dishspicy+", "
             +props.dishes[i].dishsweet;
           }
         }
       }
       if(dishes!=orderDishes){
-        console.log("re-render");
-        console.log(dishes);
-        console.log(orderDishes);
+        // console.log("re-render");
+        // console.log(dishes);
+        // console.log(orderDishes);
         setDishes(orderDishes);
       }
       if(price!=orderPrice)setPrice(orderPrice);

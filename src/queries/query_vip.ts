@@ -6,12 +6,12 @@ class QueryVipApi {
   public getVip: () => Promise<CryptoAllVip> = async () => {
     try {
       //const r = await (await fetch('http://106.14.212.200:8000/app/api/VIP/GetAllVIPInfo')).text();
-      //console.log(JSON.parse(r));
-      //console.log(data);
+      //// console.log(JSON.parse(r));
+      //// console.log(data);
       //let rawData: CryptoAllVip =JSON.parse(r) as CryptoAllVip;
       const rawData = (await GetApi('VIP/GetAllVIPInfo')).data;
-      //console.log("rawData");
-      //console.log(rawData);
+      //// console.log("rawData");
+      //// console.log(rawData);
       rawData.summary.options = {
         chart: {
           type: 'bar',
@@ -100,7 +100,7 @@ class QueryVipApi {
 
       return rawData;
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       return null;
     }
 

@@ -55,8 +55,8 @@ interface DishProps{
 }
 
 const InitialDish=(dishes):Array<DishProps>=>{
-  console.log("+++++++++++++");
-  console.log(dishes);
+  // console.log("+++++++++++++");
+  // console.log(dishes);
   return [
       {
           dishid:1,
@@ -264,8 +264,8 @@ class MainPanel extends React.Component<any,any>{
 
    constructor(props){
     super(props);
-    // console.log("----------");
-    // console.log(props.dishes);
+    // // console.log("----------");
+    // // console.log(props.dishes);
     this.state={dishes:InitialDish(props.dishes)};
    this.handleClickPlus=this.handleClickPlus.bind(this);
    this.handleClickMinus=this.handleClickMinus.bind(this);
@@ -278,16 +278,16 @@ class MainPanel extends React.Component<any,any>{
           break;
         }
       }
-      // console.log(index);
-      // console.log(this.state.dishesShow);
-      // console.log("click plus-----------");
+      // // console.log(index);
+      // // console.log(this.state.dishesShow);
+      // // console.log("click plus-----------");
       let dishes = this.state.dishes;
       dishes[index].ordernum++;
-      // console.log(this.state.dishes);
+      // // console.log(this.state.dishes);
       this.setState({
         dishes:dishes
       });
-      console.log(nowDishTag);
+      // console.log(nowDishTag);
       // this.setState(function(state){
       //     this.state.dishes[index].ordernum++;
       //     return{dishes:state.dishes};
@@ -302,10 +302,10 @@ class MainPanel extends React.Component<any,any>{
           break;
         }
       }
-      // console.log(index);
+      // // console.log(index);
       let dishes = this.state.dishes;
       dishes[index].ordernum--;
-      // console.log(this.state.dishes);
+      // // console.log(this.state.dishes);
       this.setState({
         dishes:dishes
       });
@@ -325,7 +325,7 @@ class MainPanel extends React.Component<any,any>{
         }
       }
 
-      // console.log(event.target.value);
+      // // console.log(event.target.value);
       const dishes=this.state.dishes;
       dishes[index].dishsalt=event.target.value;
       this.setState({
@@ -341,7 +341,7 @@ class MainPanel extends React.Component<any,any>{
         }
       }
 
-      // console.log(event.target.value);
+      // // console.log(event.target.value);
       const dishes=this.state.dishes;
       dishes[index].dishspicy=event.target.value;
       this.setState({
@@ -358,7 +358,7 @@ class MainPanel extends React.Component<any,any>{
         }
       }
 
-      // console.log(event.target.value);
+      // // console.log(event.target.value);
       const dishes=this.state.dishes;
       dishes[index].dishsweet=event.target.value;
       this.setState({
@@ -367,13 +367,13 @@ class MainPanel extends React.Component<any,any>{
     }
 
     handleSearchChange = (e: ChangeEvent<HTMLInputElement>): void => {
-      // console.log(this.props.dishes);
+      // // console.log(this.props.dishes);
       let value = null;
   
       if (e.target.value !== null) {
         value = e.target.value;
       }
-      // console.log(value);
+      // // console.log(value);
 
       let dishes = this.state.dishes;
 
@@ -383,7 +383,7 @@ class MainPanel extends React.Component<any,any>{
           dishes[i].searched=false;
         }
       }
-      // console.log(dishes);
+      // // console.log(dishes);
       this.setState({
         dishes: dishes
       })
@@ -454,13 +454,13 @@ function Dishpanel({dishesTag}:{dishesTag}){
   
   const isMountedRef = useRefMounted();
 
-  console.log('dishesTag: ', dishesTag.dishesTag);
+  // console.log('dishesTag: ', dishesTag.dishesTag);
   
   const [dishesInfo, setDishesInfo] = useState<DishHavethetag[] | null>(null);
 
   const getDishesInfo = useCallback(async () => {
     try {
-      console.log("调用api了",dishesTag.dishesTag);
+      // console.log("调用api了",dishesTag.dishesTag);
       const response = await dishesApi.getCategoryDishes(dishesTag.dishesTag,4);
 
       if (isMountedRef()) {
@@ -474,7 +474,7 @@ function Dishpanel({dishesTag}:{dishesTag}){
   useEffect(() => {
     getDishesInfo();
   }, [getDishesInfo]);
-  console.log(dishesInfo);
+  // console.log(dishesInfo);
   if (!dishesInfo) {
     return null;
   }
@@ -489,8 +489,8 @@ function Dishpanel({dishesTag}:{dishesTag}){
 export default Dishpanel;
 
 // export async function getServerSideProps() {
-//   console.log("api执行了一次");
-//   console.log(nowDishTag);
+//   // console.log("api执行了一次");
+//   // console.log(nowDishTag);
 //   const dishes= await dishesApi.getCategoryDishes(nowDishTag,4);
 
 

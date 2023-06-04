@@ -64,9 +64,9 @@ class DishInfo extends Component {
         this.props.handleDishSweetChange(event,this.props.dish.dishid);
     }
     test = () => {
-        console.log(this.props.index);
-        console.log(this.props.dish);
-        console.log(this.props);
+        // console.log(this.props.index);
+        // console.log(this.props.dish);
+        // console.log(this.props);
     }
     render() { 
         return (

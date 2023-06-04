@@ -172,13 +172,13 @@ interface DishProps{
     const [openSuccess, setOpenSuccess] = React.useState<boolean>(false);
 
     const handleOpenSuccess = () => {
-      console.log("打开success");
+      // console.log("打开success");
       setOpenSuccess(true);
     };
     
     const handleCloseSuccess = () => {
     
-      console.log("关闭success");
+      // console.log("关闭success");
       setOpenSuccess(false);
     };
 
@@ -188,7 +188,7 @@ interface DishProps{
   
     const handleClickOpen = () => {
       setOpen(true);
-      console.log(props);
+      // console.log(props);
     };
   
     const handleClose = () => {
@@ -241,7 +241,7 @@ interface DishProps{
              }}
              onClick={()=>{
               props.handlePromo(props.id);
-              console.log("选中活动id:"+props.id);
+              // console.log("选中活动id:"+props.id);
               handleClose();
               handleOpenSuccess();
             }}
@@ -257,7 +257,7 @@ interface DishProps{
 
 export default function PromotionAd(props){
 
-console.log(props.handlePromo);
+// console.log(props.handlePromo);
 
 // const initPromo=InitialPromo();
 
@@ -268,11 +268,11 @@ const isMountedRef = useRefMounted();
 const getAllData=useCallback(async()=>{
   try{
     let newPromos= await promoApi.getPromos();
-    console.log("让我们看看有哪些活动！");
+    // console.log("让我们看看有哪些活动！");
     if(isMountedRef()){
        setPromo(newPromos);
       
-       console.log(promotions);
+       // console.log(promotions);
     }
   }catch(err){
     console.error(err);

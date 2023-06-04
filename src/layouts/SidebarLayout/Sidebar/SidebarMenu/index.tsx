@@ -178,7 +178,7 @@ function SidebarMenu(props) {
   // let handleDishTag = (dishTag) =>{
   //   closeSidebar();
   //   nowDishTag = dishTag;
-  //   console.log(nowDishTag);
+  //   // console.log(nowDishTag);
   // }
   return (
     <>
@@ -224,16 +224,16 @@ function SidebarMenu(props) {
                     //   currentRoute === '/orderdishes' ? 'active' : ''
                     // }
                     style={{
-                      backgroundColor: props.nowDishTag === '人气菜品' ? '#98313e' : '',
+                      backgroundColor: props.nowDishTag === '推荐菜品' ? '#98313e' : '',
                       borderRadius:'0',
                     }}
                     fullWidth
                     disableRipple
                     component="a"
-                    onClick={()=>props.handleDishTag("人气菜品")}
+                    onClick={()=>props.handleDishTag("推荐菜品")}
                     startIcon={<BrightnessLowTwoToneIcon />}
                   >
-                    人气菜品
+                    推荐菜品
                   </Button>
                 {/* </NextLink> */}
               </ListItem>

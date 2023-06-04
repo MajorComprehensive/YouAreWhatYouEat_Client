@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { useContext } from 'react';
 
 export default function CleanDialog(props){
-     console.log(props.open);
+     // console.log(props.open);
      let img="/static/images/status/paper.jpg";
     // const { closeSidebar } = useContext(SidebarContext);
     return (
@@ -38,7 +38,7 @@ export default function CleanDialog(props){
 
                 const conduct=async()=>{
                     let ret=tableApi.postReleaseTable(upload);
-                    console.log("ret="+ret);
+                    // console.log("ret="+ret);
                     return ret;
                 }
 

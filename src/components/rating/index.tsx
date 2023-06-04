@@ -115,7 +115,7 @@ function DishCard(props){
   // if(props.dishes==[])
   //    return(<></>);
 
-  console.log(props.index,props.maxIndex);
+  // console.log(props.index,props.maxIndex);
   if(props.index <= props.maxIndex){
     
   return(
@@ -157,7 +157,7 @@ function DishCard(props){
 
   else
   {
-    console.log("123");
+    // console.log("123");
     return <img src="/static/images/status/service.png"/>
   }
 }
@@ -169,14 +169,14 @@ function RatingDialog(props) {
   let originPrice:number=props.orderTotalPrice.toFixed(2);
   const [price,setPrice]=React.useState<number>(originPrice);
   let pricetoChange=props.orderTotalPrice;
-  console.log("当前结账价格"+price);
+  // console.log("当前结账价格"+price);
   // if(price==0){
   //   setPrice(props.orderTotalPrice);
   // }
-  console.log("传参价格"+props.orderTotalPrice);
+  // console.log("传参价格"+props.orderTotalPrice);
 
 const handleOpenSuccess = () => {
-  console.log("打开success");
+  // console.log("打开success");
   setOpenSuccess(true);
 };
 
@@ -186,11 +186,11 @@ const handleCloseSuccess = (event?: React.SyntheticEvent | Event, reason?: strin
 
 
   const [open, setOpen] = React.useState(false);
-  console.log(open);
+  // console.log(open);
   const [fullWidth] = React.useState(true);
   const [maxWidth] = React.useState('xs');
-  console.log("评分页面菜品");
-  console.log(props.dishes);
+  // console.log("评分页面菜品");
+  // console.log(props.dishes);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -209,7 +209,7 @@ const handleCloseSuccess = (event?: React.SyntheticEvent | Event, reason?: strin
    
    
    let maxIndex=props.dishes.dish_info.length-1;
-   console.log(maxIndex);
+   // console.log(maxIndex);
    //let index=0;
    const [dishend,setDishend]=React.useState<number>(0);
 
@@ -230,7 +230,7 @@ const isMountedRef = useRefMounted();
 const getAllData=React.useCallback(async()=>{
   try{
      let vipInfo=await vipInfoApi.getVipInfo(props.username);
-     console.log("获取到的会员积分"+vipInfo.credit);
+     // console.log("获取到的会员积分"+vipInfo.credit);
     
      if(isMountedRef()){
       if(cred!=vipInfo.credit){
@@ -263,18 +263,18 @@ React.useEffect(()=>{
             pricetoChange=(0.9*props.orderTotalPrice).toFixed(2);//更新价格
         }
         else{//没超过限额，积分全扣
-            console.log("看这里");
-            console.log("要扣的积分"+cred*1.0/10);
+            // console.log("看这里");
+            // console.log("要扣的积分"+cred*1.0/10);
             pricetoChange=props.orderTotalPrice-cred*1.0/10;
             pricetoChange=pricetoChange.toFixed(2);//更新价格
             restCred=0;//剩余积分
-            console.log(pricetoChange);
+            // console.log(pricetoChange);
         }
         if(price!=pricetoChange){
           //  pricetoChange=pricetoChange.toFixed(2);
           setPrice(pricetoChange);
         }
-        console.log("使用积分,price="+price);
+        // console.log("使用积分,price="+price);
     }
     else{//价格不变
       restCred=cred;
@@ -283,14 +283,14 @@ React.useEffect(()=>{
         // pricetoChange=pricetoChange.toFixed(2);
         setPrice(pricetoChange);
       }
-      console.log("取消使用积分,price="+price);
+      // console.log("取消使用积分,price="+price);
     }
   };
 
   let img="/static/images/status/paper.jpg";
 
-  console.log("结账价格1"+price);
-  console.log("结账价格2"+originPrice);
+  // console.log("结账价格1"+price);
+  // console.log("结账价格2"+originPrice);
 
         return(
         <React.Fragment>
@@ -325,7 +325,7 @@ React.useEffect(()=>{
                 } as UpdateCredit;
                 upload.credit=restCred;
                 upload.user_name=props.username;
-                console.log("更新会员积分:"+upload);
+                // console.log("更新会员积分:"+upload);
                 
                 if(props.username!=undefined){
                 const conduct=async()=>{
@@ -333,7 +333,7 @@ React.useEffect(()=>{
                 }
 
                 conduct().then((value)=>{
-                    console.log("成功更新会员积分");
+                    // console.log("成功更新会员积分");
                 }).catch(()=>{
                     alert("会员积分更新失败！");
                 });
@@ -362,7 +362,7 @@ React.useEffect(()=>{
                 } as UpdateCredit;
                 upload.credit=restCred;
                 upload.user_name=props.username;
-                console.log("更新会员积分:"+upload);
+                // console.log("更新会员积分:"+upload);
                 
                 if(props.username!=undefined){
                 const conduct=async()=>{
@@ -370,7 +370,7 @@ React.useEffect(()=>{
                 }
 
                 conduct().then((value)=>{
-                    console.log("成功更新会员积分");
+                    // console.log("成功更新会员积分");
                 }).catch(()=>{
                     alert("会员积分更新失败！");
                 });
@@ -485,7 +485,7 @@ React.useEffect(()=>{
                      if(props.username!=undefined)
                      testData1.username=props.username;
                       const conduct1=async()=>{
-                        console.log(testData1);
+                        // console.log(testData1);
                         return ratingApi.postDishRating(testData1);
                      }
 
@@ -512,7 +512,7 @@ React.useEffect(()=>{
                    if(props.username!=undefined)
                    testData2.username=props.username;
                       const conduct2=async()=>{
-                      console.log(testData2);
+                      // console.log(testData2);
                       return ratingApi.postServiceRating(testData2);
                     }
 
