@@ -23,11 +23,12 @@ class DishesApi {
         }))).data.dish_all as DishAll[];
     }
     public async getRecommendationDishes(ctx){
-        // console.log("CTX",ctx);
+        console.log("CTX",ctx);
         let res=await axios.get(`/recommendation/${ctx.query.user}`,{
             baseURL:"http://192.168.193.163:18001",
             params:"",
         });
+        console.log('user',ctx.query.user);
         return res.data['recommendation'] as DishAll[];
     }
 }
