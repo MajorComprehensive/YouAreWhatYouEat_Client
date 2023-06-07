@@ -454,7 +454,7 @@ function RatingDialog(props) {
               getLabelText={getLabelText}
               onChange={(event, newValue) => {
                 setValue(newValue);
-                setAiComment("薯条", newValue);
+                setAiComment(props.dishes.dish_info[index].dish_name, newValue);
               }}
               onChangeActive={(event, newHover) => {
                 setHover(newHover);
