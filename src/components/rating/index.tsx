@@ -33,6 +33,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import InfoIcon from '@mui/icons-material/Info';
+import axios from 'axios';
 
 interface FinalDishProps {
   dishname: string;
@@ -201,12 +202,24 @@ function RatingDialog(props) {
     setOpen(false);
   };
 
+
+
   const [content, setContent] = React.useState<string>("还不错！");
 
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     if (e.target.value !== null) setContent(e.target.value);
   }
 
+  const setAiComment = (dishName: String, star: number) => {
+    let res = axios.get(`/comment/${dishName}`, { baseURL: 'http://192.168.193.163:18001' });
+    res.then(e => {
+      console.log("AXIOS", e.data);
+      setContent(e.data[star]);
+    }).catch(e => {
+      console.log("AXIOS_ERR", e,`test ${star}`);
+      setContent(`评价为 ${star*20} 分！`);
+    });
+  }
 
   let maxIndex = props.dishes.dish_info.length - 1;
   // console.log(maxIndex);
@@ -218,6 +231,8 @@ function RatingDialog(props) {
   const [value, setValue] = React.useState<number>(5);
   const [hover, setHover] = React.useState(-1);
   let [index, setIdx] = React.useState<number | null>(0);
+
+  
 
   //获取会员信息
   // let cred=0.0;
@@ -439,6 +454,7 @@ function RatingDialog(props) {
               getLabelText={getLabelText}
               onChange={(event, newValue) => {
                 setValue(newValue);
+                setAiComment("薯条", newValue);
               }}
               onChangeActive={(event, newHover) => {
                 setHover(newHover);
@@ -458,7 +474,7 @@ function RatingDialog(props) {
                   multiline
                   rows={4}
                   fullWidth={true}
-                  defaultValue="还不错！"
+                  value={content}
                   variant="standard"
                   onChange={handleTextChange}
                 /></Grid>
