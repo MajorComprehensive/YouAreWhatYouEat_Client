@@ -62,7 +62,8 @@ export default function PromoInfo(props){
           <Grid container spacing={0}>
           <Grid item xs={2.5}> 
 
-          <img src= {dish.dish.dish_picture} width={60} height={60}
+          <img src= {dish.dish.dish_picture} width={60}
+height={60}
                style={{borderRadius:10}} />
             </Grid>
            <Grid item xs={6}>
