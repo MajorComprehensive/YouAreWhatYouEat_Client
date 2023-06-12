@@ -24,11 +24,11 @@ const Transition = React.forwardRef(function Transition(
 });
 
 export default function DetailEmployeePopup() {
-  const router=useRouter();
+  const router = useRouter();
   const isMountedRef = useRefMounted();
   const getAllData = React.useCallback(async () => {
     try {
-      
+
     } catch (err) {
       console.error(err);
     }
@@ -47,14 +47,8 @@ export default function DetailEmployeePopup() {
 
   return (
     <div>
-	  <Button
-		fullWidth
-		variant="contained"
-		sx={{ mt: 3, mb: 0 }}
-		onClick={handleClickOpen}
-		>
-		查看餐厅全景图
-	</Button>
+
+
       {<Dialog
         fullScreen
         open={open}
@@ -85,11 +79,11 @@ export default function DetailEmployeePopup() {
           </Toolbar>
         </AppBar>
         <iframe src="/static/CanteenSim/index.html" allowFullScreen={true} scrolling='no'
-            style={{
-            height:"100vh",
-            width:"100vw",
-            border:"none"
-        }}/>
+          style={{
+            height: "100vh",
+            width: "100vw",
+            border: "none"
+          }} />
       </Dialog>}
     </div>
   );
