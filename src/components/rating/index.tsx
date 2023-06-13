@@ -358,7 +358,7 @@ function RatingDialog(props) {
         }
       >
 
-        ￥{price}&nbsp;
+        ￥{Number(price).toFixed(3)}&nbsp;
         结账</Button>}
 
       {!checked && <Button

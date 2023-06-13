@@ -198,7 +198,7 @@ return (
                 </Typography>
                   </Tooltip>
                 <Typography variant="body1" color="red"  >
-            ￥{item.dish_price*item.dish_num}
+            ￥{Number(item.dish_price*item.dish_num).toFixed(3)}
            </Typography>
                 </Grid>
     

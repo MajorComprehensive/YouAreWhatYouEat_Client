@@ -126,7 +126,7 @@ function TypoPrice(props){
 
 <Grid item xs={9.5}>
 <Typography variant="body1"  color="red">
-&nbsp;&nbsp;&nbsp;￥{props.price*props.num*props.discount} 
+&nbsp;&nbsp;&nbsp;￥{Number(props.price*props.num*props.discount).toFixed(3)} 
 </Typography>
 </Grid>
 </Grid>
@@ -253,7 +253,7 @@ if(price!=totPrice) setPrice(totPrice);
             {dish.dishname}
             </Typography>
           </Tooltip>
-       <TypoPrice price={dish.price}
+       <TypoPrice price={Number(dish.price).toFixed(3)}
                   num={dish.ordernum}
                   discount={dish.dishdiscount[0]}/>
             </Grid>

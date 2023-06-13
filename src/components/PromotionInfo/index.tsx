@@ -80,7 +80,7 @@ height={60}
 
        <Grid item xs={6}>
        <Typography variant="body1"  color="red">
-       &nbsp;&nbsp;&nbsp;现价: ￥{dish.dish.dish_price*dish.discount} 
+       &nbsp;&nbsp;&nbsp;现价: ￥{Number(dish.dish.dish_price*dish.discount).toFixed(3)} 
        </Typography>
        </Grid>
        </Grid>
